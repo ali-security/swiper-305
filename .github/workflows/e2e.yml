@@ -1,12 +1,12 @@
 name: E2E
 on:
   push:
-    branches: [master, Swiper7]
+    branches: [master, Swiper7, main]
   pull_request:
-    branches: [master, Swiper7]
+    branches: [master, Swiper7, main]
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2

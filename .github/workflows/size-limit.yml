@@ -1,16 +1,16 @@
 name: Compressed Size
 on:
   pull_request:
-    branches: [master, Swiper7]
+    branches: [master, Swiper7, main]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v2
       - uses: preactjs/compressed-size-action@v2
         with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           build-script: build:prod
-          pattern: './package/**/*.{js,css}'
+          pattern: ./package/**/*.{js,css}
